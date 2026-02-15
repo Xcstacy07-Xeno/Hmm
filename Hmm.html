@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Special Love Surprise</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    text-align:center;
+    font-family:cursive;
+    background:linear-gradient(to right, pink, purple);
+    color:white;
+}
+
+.container{
+    margin-top:150px;
+}
+
+button{
+    padding:15px 30px;
+    font-size:20px;
+    background:red;
+    color:white;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    animation: glow 1s infinite alternate;
+}
+
+@keyframes glow{
+    from{box-shadow:0 0 10px yellow;}
+    to{box-shadow:0 0 30px white;}
+}
+
+.heart{
+    font-size:60px;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.3);}
+    100%{transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="main">
+    <h1>Click For Something Special ✨</h1>
+    <button onclick="showLove()">Open 💌</button>
+</div>
+
+<!-- KEEP AUDIO OUTSIDE -->
+<audio id="bgmusic" loop>
+    <source src="/Hmm/yung_kai_-_yung_kai_-_blue_Official_Music_Video_(mp3.pm).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function showLove(){
+
+    // Play music after user click
+    var music = document.getElementById("bgmusic");
+    music.play();
+
+    // Change ONLY the container, not the whole body
+    document.getElementById("main").innerHTML = `
+        <div class="heart">❤️</div>
+        <h1>You Are Truly Special 💖</h1>
+        <p style="font-size:22px;">
+            I think you're amazing.<br>
+            Your smile brightens my day.<br>
+            Talking to you makes everything better.<br><br>
+            This song is for you 🎵❤️
+        </p>
+    `;
+}
+</script>
+
+</body>
+</html>
